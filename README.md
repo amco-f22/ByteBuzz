@@ -50,7 +50,7 @@ ByteBuzz/
 │   └── package.json
 ├── deploy/                  # EC2 deployment scripts
 │   ├── setup.sh             # One-click EC2 setup script
-│   └── jerney-nginx.conf    # Nginx reverse proxy config
+│   └── bytebuzz-nginx.conf  # Nginx reverse proxy config
 └── README.md
 ```
 
@@ -111,7 +111,7 @@ pm2 status                          # Check backend status
 pm2 logs                            # View backend logs
 pm2 restart all                     # Restart backend
 sudo systemctl restart nginx        # Restart Nginx
-sudo -u postgres psql -d jerney_db  # Connect to database
+sudo -u postgres psql -d bytebuzz_db  # Connect to database
 ```
 
 ---
@@ -132,9 +132,9 @@ npm install
 # Create a .env file (or export these variables)
 export DB_HOST=localhost
 export DB_PORT=5432
-export DB_USER=jerney_user
-export DB_PASSWORD=jerney_pass_2026
-export DB_NAME=jerney_db
+export DB_USER=bytebuzz_user
+export DB_PASSWORD=bytebuzz_pass_2026
+export DB_NAME=bytebuzz_db
 export PORT=5000
 
 npm start
