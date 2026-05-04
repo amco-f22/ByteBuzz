@@ -141,7 +141,6 @@ jobs:
   image-scan:
     name: "🔬 Scan ${{ matrix.component }} Image"
     runs-on: ubuntu-latest
-    continue-on-error: true
     needs: build
     strategy:
       matrix:
@@ -219,7 +218,6 @@ jobs:
   update-manifest:
     name: "🚀 Update K8s Manifest"
     runs-on: ubuntu-latest
-    continue-on-error: true
     needs: [build, image-scan, iac-scan, dockerfile-lint]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
