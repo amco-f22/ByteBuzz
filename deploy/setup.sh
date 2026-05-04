@@ -56,6 +56,18 @@ cp -r ~/ByteBuzz/* /var/www/bytebuzz/
 # --- Install backend dependencies ---
 echo "📦 Installing backend dependencies..."
 cd /var/www/bytebuzz/backend
+
+# Create .env file with database credentials
+cat > .env <<ENV
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=bytebuzz_user
+DB_PASSWORD=bytebuzz_pass_2026
+DB_NAME=bytebuzz_db
+PORT=5000
+ENV
+
+echo "✅ Backend .env file created"
 npm install --production
 
 # --- Build frontend ---
