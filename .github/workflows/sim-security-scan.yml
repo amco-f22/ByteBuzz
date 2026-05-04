@@ -16,7 +16,7 @@ jobs:
           curl -s -X POST \
             "https://sim.ai/api/workflows/45d62250-3c46-430d-8cf8-ba658804b20f/execute" \
             -H "Content-Type: application/json" \
-            -H "x-api-key: ${{ secrets.SIM_API_KEY }}" \
+            -H "x-api-key: ${{ secrets.sk-sim-YV-XWIC0U_NHcWxPX5fqAhAaLhrFFIuE }}" \
             -d '{
               "action": "${{ github.event.action }}",
               "number": ${{ github.event.pull_request.number }},
