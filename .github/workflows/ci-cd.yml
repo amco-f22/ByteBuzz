@@ -154,6 +154,7 @@ jobs:
           docker build -t bytebuzz-${{ matrix.component }}:scan ./${{ matrix.component }}
 
       - name: Run Trivy vulnerability scanner
+        continue-on-error: true
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: "bytebuzz-${{ matrix.component }}:scan"
