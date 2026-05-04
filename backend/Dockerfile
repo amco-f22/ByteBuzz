@@ -7,7 +7,7 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 
 # -----------Production stage-----------
-FROM node:20-alpine AS production
+FROM node:25-alpine AS production
 
 # Security: run as non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
